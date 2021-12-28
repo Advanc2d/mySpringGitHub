@@ -33,6 +33,8 @@
 	</beans:bean>
 	
 	<!-- 예외 처리를 위해서 만든 문장 -->
-	<context:component-scan base-package="org.conan.*"/>
-	
+	<!-- <context:component-scan base-package="org.conan.service"/>
+	<context:component-scan base-package="org.conan.mapper"/>
+	<context:component-scan base-package="org.conan.domain"/> -->
+	<!-- <context:component-scan base-package="org.conan.service"/>  -->
 </beans:beans>

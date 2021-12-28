@@ -9,6 +9,7 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		<context:component-scan base-package="org.conan.sample"></context:component-scan>
+		
 
 	<!-- ======================================추가한 부분================================================= -->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
@@ -27,6 +28,9 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	
+	<mybatis-spring:scan base-package="org.conan.persistence"/>
 	<mybatis-spring:scan base-package="org.conan.mapper"/>
+	
+	<context:component-scan base-package="org.conan.service"></context:component-scan>
 	<!-- ======================================추가한 부분================================================= -->
 </beans>
