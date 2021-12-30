@@ -1,6 +1,9 @@
 package org.conan.test;
 
+import java.util.List;
+
 import org.conan.domain.BoardVO;
+import org.conan.domain.Criteria;
 import org.conan.persistence.BoardMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -55,6 +58,37 @@ public class BoardMapperTest {
 		log.info("UPDATE COUNT : " + count);
 	}
 	
+	@Test
+	public void testInsertSelectKey() {
+		BoardVO board = new BoardVO();
+		board.setTitle("새로 작성하는 글22222");
+		board.setContent("새로 작성하는 내용22222");
+		board.setWriter("newbie22222");
+		mapper.insertSelectKey(board);
+		log.info(board);
+	}
+	
+	@Test
+	public void testPaging() {
+		Criteria cri = new Criteria(2,3);
+		List<BoardVO> list = mapper.getListWithPaging(cri);
+		list.forEach(board -> log.info(board));
+	}
+	
+	@Test
+	public void testSearch() {
+		Criteria cri = new Criteria(1,100);
+		cri.setKeyword("a");
+		cri.setType("T");
+		List<BoardVO> list = mapper.getListWithPaging(cri);
+		list.forEach(board -> log.info(board));
+	}
+	
+	@Test
+	public void testGetTotalCount() {
+		Criteria cri = new Criteria(2,3);
+		log.info(mapper.getTotalCount(cri));
+	}
 }
 
 // SQL을 테스트 하기 위한 공간

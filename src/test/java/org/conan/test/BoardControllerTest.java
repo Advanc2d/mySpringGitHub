@@ -62,4 +62,10 @@ public class BoardControllerTest {
 	public void testRemove() throws Exception{
 		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/remove").param("bno","7")).andReturn().getModelAndView().getViewName();
 	}
+	
+	@Test
+	public void testGetListWithPaging() throws Exception{
+//		service.getList(new Criteria(2,5)).forEach(board -> log.info(board));
+		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/list").param("pageNum", "2").param("amount", "3")).andReturn().getModelAndView().getModelMap());
+	}
 }

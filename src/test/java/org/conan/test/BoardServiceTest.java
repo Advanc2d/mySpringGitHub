@@ -3,6 +3,7 @@ package org.conan.test;
 import static org.junit.Assert.assertNotNull;
 
 import org.conan.domain.BoardVO;
+import org.conan.domain.Criteria;
 import org.conan.service.BoardService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +20,7 @@ import lombok.extern.log4j.Log4j;
 public class BoardServiceTest {
 	@Setter(onMethod_= {@Autowired})
 	private BoardService service;
+
 	
 	@Test
 	public void testExist() {
@@ -57,5 +59,11 @@ public class BoardServiceTest {
 		if(board == null) {return;}
 		board.setTitle("제목 수정 from Servcie");
 		log.info("MODIFY RESULT : " + service.modify(board));
+	}
+	
+	@Test
+	public void testGetListWithPaging() throws Exception{
+		service.getList(new Criteria(2,5)).forEach(board -> log.info(board));
+	
 	}
 }

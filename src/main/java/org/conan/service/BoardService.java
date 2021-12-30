@@ -2,9 +2,8 @@ package org.conan.service;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
 import org.conan.domain.BoardVO;
+import org.conan.domain.Criteria;
 
 public interface BoardService {
 	
@@ -20,4 +19,7 @@ public interface BoardService {
 	
 	/* @Select("select * from tbl_board where bno >0") */
 	public List<BoardVO> getList();
+	public List<BoardVO> getList(Criteria cri);
+	public int getTotalCount(Criteria cri);
+//	public long insertSelectKey(BoardVO board);
 }
