@@ -12,6 +12,7 @@ public class PageDTO {
 	private int total;			// 전체 데이터 수
 	
 	private Criteria cri;
+	
 	public PageDTO(Criteria cri, int total) {
 		this.cri=cri;
 		this.total=total;
