@@ -128,9 +128,9 @@
       $(document).ready(function(){
          var result = '<c:out value="${result}"/>';
          checkModal(result);
-         /* history.replaceState({},null,null); 
-         	모달이 그냥 뜰 때 처리해주기 위해서 설정해주기 위해 씀
-         */
+         history.replaceState({},null,null); 
+         	/* 모달이 그냥 뜰 때 처리해주기 위해서 설정해주기 위해 씀 */
+        
          function checkModal(result){
             if(result==='' || history.state){		// 위에 history를 확인하기 위해 추가
                return;
@@ -157,7 +157,9 @@
 	    	e.preventDefault();
 	    	/* console.log('click'); */
 	    	actionForm.find("input[name='pageNum']").val($(this).attr("href"));
-	    	actionForm.submit();
+	    	/* actionForm.submit(); */
+	    	actionForm.attr("action","/board/list");
+	    	  actionForm.submit();
 	     });
       </script>
       
@@ -165,7 +167,8 @@
        $(".move").on("click",function(e){
     	  e.preventDefault();
     	  //console.log("click");
-    	  actionForm.append("<input type='hidden' name='bno' value='" + $(this).attr("href") + "'>");
+    	  actionForm.find("#bno").remove();
+    	  actionForm.append("<input id='bno' type='hidden' name='bno' value='" + $(this).attr("href") + "'>");
     	  actionForm.attr("action","/board/get");
     	  actionForm.submit();
        });

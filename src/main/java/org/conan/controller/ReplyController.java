@@ -3,6 +3,7 @@ package org.conan.controller;
 import java.util.List;
 
 import org.conan.domain.Criteria;
+import org.conan.domain.ReplyPageDTO;
 import org.conan.domain.ReplyVO;
 import org.conan.service.ReplyService;
 import org.springframework.http.HttpStatus;
@@ -35,12 +36,14 @@ public class ReplyController {
 		return insertCount == 1 ? new ResponseEntity<>("sucess", HttpStatus.OK):new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
-	@GetMapping(value="/pages/{bno}/{page}", produces= {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-	public ResponseEntity<List<ReplyVO>> getList(@PathVariable("page") int page, @PathVariable("bno") Long bno){
-		log.info("getList-----------------");
-		Criteria cri = new Criteria(page,5);
-		return new ResponseEntity<>(service.getList(cri, bno), HttpStatus.OK);
-	}
+	/*
+	 * @GetMapping(value="/pages/{bno}/{page}", produces=
+	 * {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE}) public
+	 * ResponseEntity<List<ReplyVO>> getList(@PathVariable("page") int
+	 * page, @PathVariable("bno") Long bno){ log.info("getList-----------------");
+	 * Criteria cri = new Criteria(page,5); return new
+	 * ResponseEntity<>(service.getList(cri, bno), HttpStatus.OK); }
+	 */
 	
 	@GetMapping(value="/{rno}", produces= {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<ReplyVO> get(@PathVariable("rno") Long rno){
@@ -62,5 +65,14 @@ public class ReplyController {
 		log.info("modify : " + vo);
 		return service.modify(vo) == 1? new ResponseEntity<>("success",HttpStatus.OK) : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		
+	}
+	
+	@GetMapping(value="/pages/{bno}/{page}", produces= {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+	public ResponseEntity<ReplyPageDTO> getList(@PathVariable("page") int page, @PathVariable("bno") Long bno){
+		log.info("getList-----------------");
+		Criteria cri = new Criteria(page,5);
+		log.info("get Reply List bno : " + bno);
+		log.info("cri : " + cri);
+		return new ResponseEntity<>(service.getListPage(cri, bno), HttpStatus.OK);
 	}
 }

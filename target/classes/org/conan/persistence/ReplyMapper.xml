@@ -20,4 +20,12 @@
 	<select id="getListWithPaging" resultType="org.conan.domain.ReplyVO">
 		select * from tbl_reply where bno=#{bno} limit #{cri.pageStart}, #{cri.amount}	
 	</select>
+	
+	<select id="getReplyTotalCount" resultType="int">
+		select count(*) from tbl_reply
+	</select>
+	
+	<select id="getCountByBno" resultType="int">
+		select count(*) from tbl_reply where bno=#{bno}
+	</select>
 </mapper>

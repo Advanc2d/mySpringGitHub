@@ -66,4 +66,13 @@ public class ReplyMapperTest {
 		List<ReplyVO> replies = mapper.getListWithPaging(cri, bnoArr[0]);
 		replies.forEach(reply -> log.info(reply));
 	}
+	
+	@Test
+	public void testList2() {
+		Criteria cri = new Criteria(2,5);		// 2번 페이지에 5개씩 출력
+		List<ReplyVO> replies = mapper.getListWithPaging(cri, 2L);		// 2L은 게시판 번호
+		replies.forEach(reply -> log.info(reply));
+		
+	}
+	
 }
