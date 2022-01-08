@@ -43,7 +43,7 @@
 							<c:forEach var="board" items="${list }">
 								<tr class="odd gradeX">
 									<td>${board.bno }</td>
-									<td><a class="move" href='<c:out value="${board.bno}"/>'><c:out value="${board.title}"/></a></td>
+									<td><a class="move" href='<c:out value="${board.bno}"/>'><c:out value="${board.title}"/>[${board.replyCnt}]</a></td>
 									<td>${board.writer }</td>
 									<td class="center">${board.regDate }</td>
 									<td class="center">${board.updateDate }</td>

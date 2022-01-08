@@ -10,8 +10,10 @@
 	<properties>
 		<java-version>11</java-version>
 		<org.springframework-version>5.2.19.RELEASE</org.springframework-version>
-		<org.aspectj-version>1.6.10</org.aspectj-version>
-		<org.slf4j-version>1.6.6</org.slf4j-version>
+		<org.aspectj-version>1.9.7</org.aspectj-version>			
+		<org.slf4j-version>1.7.30</org.slf4j-version><!-- 변경 후 -->
+		<!-- <org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version> 버전 정보 변경 전..!-->
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -225,6 +227,31 @@
 		    <version>1.4</version>
 		</dependency>
 		<!-- 12월 27일 여기까지 -->
+		
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>1.9.7</version>
+		    <scope>runtime</scope>
+		</dependency>
+		<!-- 1월 5일 aop를 위한 aspectj 등록 -->
+		
+		<!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
+		<dependency>
+		    <groupId>net.coobird</groupId>
+		    <artifactId>thumbnailator</artifactId>
+		    <version>0.4.16</version>
+		</dependency>
+		<!-- 1월 5일 thumbnail을 위한 등록 -->
+		
+		<!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
+		<dependency>
+		    <groupId>org.quartz-scheduler</groupId>
+		    <artifactId>quartz</artifactId>
+		    <version>2.3.2</version>
+		</dependency>
+		<!-- 1월 7일 quartz 추가 -->
 	<!--  ====================복사한 부분============================ -->	    
 	</dependencies>
     <build>

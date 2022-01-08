@@ -58,6 +58,11 @@
 		<include refid="criteria"></include>
 	</select>
 	
+	<update id="updateReplyCnt">
+		update tbl_board
+		set replycnt = replycnt+#{amount}
+		where bno = #{bno}
+	</update>
 </mapper>
 
 <!-- 인터페이스에 선언된 SQL DAO 문장들을 구현한 공간 -->

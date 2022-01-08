@@ -89,6 +89,11 @@ public class BoardMapperTest {
 		Criteria cri = new Criteria(2,3);
 		log.info(mapper.getTotalCount(cri));
 	}
+	
+	@Test
+	public void testupdateReplynt() {
+		
+	}
 }
 
 // SQL을 테스트 하기 위한 공간

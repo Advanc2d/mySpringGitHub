@@ -2,6 +2,8 @@ package org.conan.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+import org.conan.domain.BoardAttachVO;
 import org.conan.domain.BoardVO;
 import org.conan.domain.Criteria;
 
@@ -21,5 +23,7 @@ public interface BoardService {
 	public List<BoardVO> getList();
 	public List<BoardVO> getList(Criteria cri);
 	public int getTotalCount(Criteria cri);
+	public void updateReplyCnt(@Param("bno")Long bno, @Param("amount")int amount);
+	public List<BoardAttachVO> getAttachList(Long bno);
 //	public long insertSelectKey(BoardVO board);
 }

@@ -2,6 +2,7 @@ package org.conan.persistence;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.conan.domain.BoardVO;
 import org.conan.domain.Criteria;
 
@@ -22,5 +23,7 @@ public interface BoardMapper {
 	public List<BoardVO> getListWithPaging(Criteria cri);
 	
 	public int getTotalCount(Criteria cri);
+	
+	public void updateReplyCnt(@Param("bno")Long bno, @Param("amount")int amount);
 }
 // xml에 정의하기 위해 인터페이스로 선언하는 공간 
