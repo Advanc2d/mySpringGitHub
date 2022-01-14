@@ -64,7 +64,7 @@ function showImage(fileCallPath){		// 섬네일 이미지 확대해서 보여주
 	width:400px;
 }
 </style>
-        <jsp:include page="../includes/header.jsp"/>
+      <jsp:include page="../includes/header.jsp"/>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
