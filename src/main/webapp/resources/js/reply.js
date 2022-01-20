@@ -70,7 +70,7 @@ var replyService=(function(){
 				var today = new Date();
 				var gap = today.getTime()-timeValue;
 				var dateObj = new Date(timeValue);
-				var str = "";
+				
 				if(gap<(1000*60*60*24)){
 					var hh = dateObj.getHours();
 					var mi = dateObj.getMinutes();

@@ -252,6 +252,33 @@
 		    <version>2.3.2</version>
 		</dependency>
 		<!-- 1월 7일 quartz 추가 -->
+		
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+      <dependency>
+         <groupId>org.springframework.security</groupId>
+         <artifactId>spring-security-web</artifactId>
+         <version>5.2.10.RELEASE</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+      <dependency>
+         <groupId>org.springframework.security</groupId>
+         <artifactId>spring-security-config</artifactId>
+         <version>5.2.10.RELEASE</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+      <dependency>
+         <groupId>org.springframework.security</groupId>
+         <artifactId>spring-security-core</artifactId>
+         <version>5.2.10.RELEASE</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+      <dependency>
+         <groupId>org.springframework.security</groupId>
+         <artifactId>spring-security-taglibs</artifactId>
+         <version>5.2.10.RELEASE</version>
+      </dependency>
+      <!-- 1월 20일 security 관련 추가 -->
 	<!--  ====================복사한 부분============================ -->	    
 	</dependencies>
     <build>
